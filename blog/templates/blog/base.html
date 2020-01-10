@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +14,7 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 <body>
 	<header>
@@ -20,14 +22,14 @@
 			<nav class="purple darken-4">
 				<div class="nav-wrapper">
 					<div class="container">
-						<a href="#!" class="brand-logo">BlogApp</a>
+						<a href="{% url 'blog-home' %}" class="brand-logo">BlogApp</a>
 						<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 						<ul class="right hide-on-med-and-down">
-							<li><a href="#"><i class="material-icons">home</i>Home</a></li>
+							<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
 							<li><a href="#"><i class="material-icons">account_box</i>UserProfile</a></li>
 							<li><a href="#">Login</a></li>
 							<li><a href="#">Register</a></li>
-							<li><a href="#"><i class="material-icons">live_help</i>About</a></li>				
+							<li><a href="{% url 'blog-about' %}"><i class="material-icons">live_help</i>About</a></li>				
 						</ul>
 					</div>
 				</div>

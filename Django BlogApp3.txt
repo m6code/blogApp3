@@ -1,0 +1,30 @@
+Django BlogApp3
+
+
+Create Project : django-admin startproject blogApp3
+Create An App : python manage.py startapp blog
+
+REPOS
+git remote add origin https://github.com/m6code/blogApp3.git
+git remote set-url --add --push origin https://github.com/m6code/blogApp3.git
+git remote add gitlab https://gitlab.com/m6code/blogapp3.git
+git remote add bitbucket https://m6code@bitbucket.org/m6code/blogapp3.git
+
+Installing python3.8 https://tecadmin.net/install-python-3-8-ubuntu/
+
+
+PYthon Virtual Environment (https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+upgrade pip ::: python3 -m pip install --user --upgrade pip (unix)
+			::: py -m pip install --upgrade pip (win)
+install venv::: python3 -m pip install --user virtualenv (unix)
+			::: py -m pip install --user virtualenv (win)
+To create virtual environment ::: python3 -m venv ./django_env (unix)
+			::: py -m venv django_env (win)
+Activate Virtual environment ::: source django_env/bin/activate (unix)
+			::: .\env\Scripts\activate (win)
+
+
+MANAGING ADMIN
+Create Migrations ::: python3.8 manage.py makemigrations
+Apply Migrations  ::: python3.8 manage.py migrate
+Creating superUser ::: python3.8 manage.py createsuperuser
