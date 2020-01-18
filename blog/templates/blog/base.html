@@ -19,17 +19,22 @@
 <body>
 	<header>
 		<div class="navbar-fixed">
-			<nav class="purple darken-4">
+			<nav class="pink darken-2">
 				<div class="nav-wrapper">
 					<div class="container">
 						<a href="{% url 'blog-home' %}" class="brand-logo">BlogApp</a>
 						<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
-							<li><a href="#"><i class="material-icons">account_box</i>UserProfile</a></li>
-							<li><a href="#">Login</a></li>
-							<li><a href="#">Register</a></li>
+						{% if user.is_authenticated %}
+							<li><a href="#"><i class="material-icons">account_box</i>{{user.username}}</a></li>
+							<li><a href="{% url 'logout' %}">Logout</a></li>
+						{% else %}
+							<li><a href="{% url 'login' %}">Login</a></li>
+							<li><a href="{% url 'register' %}">Register</a></li>
+						{% endif %}
 							<li><a href="{% url 'blog-about' %}"><i class="material-icons">live_help</i>About</a></li>				
+						
 						</ul>
 					</div>
 				</div>
@@ -38,9 +43,9 @@
 		<ul class="sidenav" id="mobile-menu">
 			<li><a href="#">Home</a></li>
 			<li><a href="#">UserProfile</a></li>
-			<li><a href="#">Login</a></li>
-			<li><a href="#">Register</a></li>
-			<li><a href="#">About</a></li>	
+			<li><a href="{% url 'login' %}">Login</a></li>
+			<li><a href="{% url 'register' %}">Register</a></li>
+			<li><a href="{% url 'blog-about' %}">About</a></li>	
 		</ul>
 	</header>
 
@@ -48,12 +53,12 @@
 		<div class="row">
 			<div class="col-md-8">
 				{% if messages %}
-					{% for message in messages %}
-						<div class="alert alert-{{ message.tags }}">
-							{{ message }}
-						</div>
-						
-					{% endfor %}
+				{% for message in messages %}
+				<div class="alert alert-{{ message.tags }}">
+					{{ message }}
+				</div>
+				
+				{% endfor %}
 				{% endif %}
 				{% block content %}{% endblock %}
 				
