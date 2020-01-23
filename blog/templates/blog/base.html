@@ -26,26 +26,35 @@
 						<a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
-						{% if user.is_authenticated %}
+							{% if user.is_authenticated %}
 							<li><a href="{% url 'profile' %}"><i class="material-icons">account_box</i>{{user.username}}</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
-						{% else %}
+							{% else %}
 							<li><a href="{% url 'login' %}">Login</a></li>
 							<li><a href="{% url 'register' %}">Register</a></li>
-						{% endif %}
+							{% endif %}
 							<li><a href="{% url 'blog-about' %}"><i class="material-icons">live_help</i>About</a></li>				
-						
+							
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
 		<ul class="sidenav" id="mobile-menu">
-			<li><a href="#">Home</a></li>
+			<!-- <li><a href="#">Home</a></li>
 			<li><a href="#">UserProfile</a></li>
 			<li><a href="{% url 'login' %}">Login</a></li>
 			<li><a href="{% url 'register' %}">Register</a></li>
-			<li><a href="{% url 'blog-about' %}">About</a></li>	
+			<li><a href="{% url 'blog-about' %}">About</a></li>	 -->
+			<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
+			{% if user.is_authenticated %}
+			<li><a href="{% url 'profile' %}"><i class="material-icons">account_box</i>{{user.username}}</a></li>
+			<li><a href="{% url 'logout' %}">Logout</a></li>
+			{% else %}
+			<li><a href="{% url 'login' %}">Login</a></li>
+			<li><a href="{% url 'register' %}">Register</a></li>
+			{% endif %}
+			<li><a href="{% url 'blog-about' %}"><i class="material-icons">live_help</i>About</a></li>
 		</ul>
 	</header>
 
