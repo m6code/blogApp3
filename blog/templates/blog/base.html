@@ -27,6 +27,7 @@
 						<ul class="right hide-on-med-and-down">
 							<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
 							{% if user.is_authenticated %}
+							<li><a href="{% url 'post-create' %}">New Post</a></li>
 							<li><a href="{% url 'profile' %}"><i class="material-icons">account_box</i>{{user.username}}</a></li>
 							<li><a href="{% url 'logout' %}">Logout</a></li>
 							{% else %}
@@ -48,6 +49,7 @@
 			<li><a href="{% url 'blog-about' %}">About</a></li>	 -->
 			<li><a href="{% url 'blog-home' %}"><i class="material-icons">home</i>Home</a></li>
 			{% if user.is_authenticated %}
+			<li><a href="{% url 'post-create' %}">New Post</a></li>
 			<li><a href="{% url 'profile' %}"><i class="material-icons">account_box</i>{{user.username}}</a></li>
 			<li><a href="{% url 'logout' %}">Logout</a></li>
 			{% else %}
