@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-<h1>Home Page</h1>
+<h3 class="mb-3">{{ view.kwargs.username}} ({{ page_obj.paginator.count }})</h3>
 {% for post in posts %}
 <article class="media content-section">
 	<img src="{{ post.author.profile.image.url }}" class="article-img circle">
